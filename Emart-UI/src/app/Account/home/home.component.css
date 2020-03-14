@@ -1,0 +1,49 @@
+#navid{
+    background: -webkit-linear-gradient(left, #00c6ff, #3931af);
+      
+}
+    /* height: 60px; */
+
+.navbar-nav > li{
+
+    margin-left:40px;
+    margin-right:40px;
+  }
+
+/* .image{
+    background-image: url("D:/FINAL-PROJECT-KALYANI-845164/Emart-UI/src/assets/images/cart4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color:-webkit-linear-gradient(left, #00c6ff, #3931af);
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      height:400px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  #carouselControls{
+      margin-top: 20px;
+  }
+ #pic{
+    margin-top: 20px;
+     width: 100%;
+ }

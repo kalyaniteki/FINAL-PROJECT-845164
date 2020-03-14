@@ -1,0 +1,88 @@
+
+
+
+
+    <div class="container login-container">
+        <div class="col-md-6 login-form-2">
+            <h3>AddItems</h3>
+            
+                <form [formGroup]="sform"  >
+                    
+                  
+                    
+                        <div class="form-group">
+                            <select (change)="Get()" formControlName="cid" class="form-control">
+                                <option *ngFor="let item of clist" value={{item.cid}}>{{item.cname}}</option>
+                            </select> 
+                       </div>
+                    
+                  
+                   <div class="form-group">
+                              
+                    <select  formControlName="sid" class="form-control">
+                        <option *ngFor="let item of slist" value={{item.sid}}>{{item.sname}}</option>
+                    </select> 
+                       
+                   </div>
+               
+                    <div class="form-group">
+                        
+                        <input type="text" formControlName="name" placeholder="ItemName *" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required"> Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                              
+                        <input type="number" formControlName="price" class="form-control" placeholder="Price *" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
+                       <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                           <div *ngIf="f.price.errors.required">price is required</div>
+                           
+                       </div>
+                   </div>
+                   <div class="form-group">
+                              
+                    <input type="text" formControlName="description" class="form-control" placeholder="description *" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+                   <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                       <div *ngIf="f.description.errors.required">description is required</div>
+                       
+                   </div>
+               </div>
+               <div class="form-group">
+                              
+                <input type="number" formControlName="stock" class="form-control" placeholder="Stock *" [ngClass]="{ 'is-invalid': submitted && f.stock.errors }" />
+               <div *ngIf="submitted && f.stock.errors" class="invalid-feedback">
+                   <div *ngIf="f.stock.errors.required">Stock is required</div>
+                   
+               </div>
+               </div>
+               <!-- <div class="form-group">
+                              
+                <input type="number" formControlName="sellerid" class="form-control" placeholder="SellerID *" [ngClass]="{ 'is-invalid': submitted && f.sellerid.errors }" />
+               <div *ngIf="submitted && f.sellerid.errors" class="invalid-feedback">
+                   <div *ngIf="f.sellerid.errors.required">SellerID is required</div>
+                   
+               </div>
+               </div> -->
+                    <div class="form-group">
+                        
+                        <input type="text" formControlName="remarks" placeholder="remarks*" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.remarks.errors }" />
+                        <div *ngIf="submitted && f.remarks.errors" class="invalid-feedback">
+                            <div *ngIf="f.remarks.errors.required">Password is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <input type="file" formControlName="image" name="image" (change)="fileEvent($event)" />
+                        </div>
+                      </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary mr-1" class="btnRegister" (click)="Onsubmit()" >Add</button>
+                </div>
+               
+                 
+            </form>
+        </div>
+    </div>
+    

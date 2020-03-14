@@ -1,0 +1,44 @@
+#navid{
+    /* background: -webkit-linear-gradient(left, #6056eb, #30c2eb); */
+      /* background-color: #30c2eb; */
+      background-color: rgb(101, 107, 107);
+}
+    /* height: 60px; */
+
+.navbar-nav > li{
+
+    margin-left:40px;
+    margin-right:40px;
+  }
+
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+   footer{
+      height: 150px;
+      padding: 20px;
+      margin-bottom: 10px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      height:500px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  #carouselControls{
+      margin-top: 20px;
+  }
+ #pic{
+    margin-top: 20px;
+     width: 100%;
+ }

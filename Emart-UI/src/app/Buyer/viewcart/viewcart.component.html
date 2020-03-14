@@ -1,0 +1,19 @@
+
+<div class="container">
+    <div class="row" >
+      <div class="col-md-3" *ngFor="let item of list">
+      <div class="card" style="width:250px">
+        <img class="img" src="assets/images/{{item.image}}" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">{{item.itemname}}</h4>
+          <h5 class="card-text">ID:{{item.itemid}}
+             Price:{{item.price}} </h5>
+             <button id="b1" type="button" (click)="buy(item)" class="btn btn-primary" >BuyItem</button>
+          <button  type="button" (click)="Delete(item.cartid)" class="btn btn-danger">Del</button>
+          <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    

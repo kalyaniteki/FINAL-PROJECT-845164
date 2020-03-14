@@ -1,0 +1,32 @@
+
+
+
+    <div class="container login-container">
+        <div class="col-md-6 login-form-2">
+            <h3>AddCategories</h3>
+            
+                <form [formGroup]="adminform" >
+              
+                    <div class="form-group">
+                        
+                        <input type="text" formControlName="cname" placeholder="CategoryName *" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cname.errors }" />
+                        <div *ngIf="submitted && f.cname.errors" class="invalid-feedback">
+                            <div *ngIf="f.cname.errors.required"> Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        
+                        <input type="text" formControlName="briefdetails" placeholder="Briefdetails*" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.briefdetails.errors }" />
+                        <div *ngIf="submitted && f.briefdetails.errors" class="invalid-feedback">
+                            <div *ngIf="f.briefdetails.errors.required">Password is required</div>
+                        </div>
+                    </div>
+                <div class="form-group">
+                    <button class="btn btn-primary mr-1" class="btnRegister" (click)="Onsubmit()" >Add</button>
+                </div>
+               
+                 
+            </form>
+        </div>
+    </div>
+    

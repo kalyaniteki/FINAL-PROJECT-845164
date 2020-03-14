@@ -1,0 +1,37 @@
+
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+        
+    <table class="table table-bordered custab">
+    <thead style="background:dodgerblue;color:aliceblue">
+   
+        <tr>
+            <th>Image</th>
+            <th>ID</th>
+            <th>Itemname</th>
+            <th>TransactionType</th>
+            <th>Status</th>
+            <th>Quntity</th>
+            <th>Date</th>  
+        </tr>
+    </thead>
+    <ng-container *ngFor="let purchase of purch"> 
+        <ng-container *ngFor="let item of items">
+       <tr *ngIf="item.itemid==purchase.itemid">   
+        <td><img class="card-img-top" src="\assets\images\{{item.image}}"></td>
+        <td >{{item.itemid}}</td>
+         <td>{{item.itemname}}</td>
+         <td>{{purchase.transactionType}}</td>
+         <td>{{purchase.transactionStatus}}</td>
+         <td>{{purchase.numOfItems}}</td>
+         <td>{{purchase.datetime|date:'MM/dd/yyyy'}}</td>
+     </tr>
+ </ng-container>
+</ng-container>
+       
+           
+    </table>
+
+    
+    </div>
+</div>

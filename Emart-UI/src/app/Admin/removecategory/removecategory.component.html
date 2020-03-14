@@ -1,0 +1,27 @@
+
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+        
+    <table class="table table-striped custab">
+    <thead>
+    <!-- <a href="#" class="btn btn-primary"><b>+</b> Add new categories</a> -->
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Details</th>
+            
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let item of list">
+        <td>{{item.cid}}</td>
+        <td>{{item.cname}}</td>
+        <td>{{item.briefdetails}}</td>
+         <td class="text-center"> <button  type="button" (click)="Delete(item.cid)" class="btn btn-danger">Del</button></td>
+    </tr>
+           
+    </table>
+
+    
+    </div>
+</div> 

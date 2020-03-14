@@ -1,0 +1,13 @@
+#navid{
+    background: -webkit-linear-gradient(left, #00c6ff, #3931af);
+    height: 60px;
+}
+.navbar-nav > li{
+    margin-left:40px;
+    margin-right:40px;
+  }
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+  

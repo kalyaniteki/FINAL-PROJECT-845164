@@ -1,0 +1,36 @@
+<div style="background-image: url(/assets/images/cap3.PNG);background-size:100% 100%;height:875px;background-repeat: no-repeat;">
+
+<nav class="navbar navbar-expand-lg navbar-dark" id="navid">
+  <a class="navbar-brand" href="#"><i class="fa fa-home" style="font-size:30px;color:white">Seller</i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="navbar-brand"  [routerLink]="'/Home'">Home</a>
+        </li>
+        <li class="nav-item ">
+          <a class="navbar-brand" [routerLink]="['additems']" >Additems</a>
+        </li>
+        <li class="nav-item">
+            <a class="navbar-brand" [routerLink]="['viewitems']" >ViewItems</a>
+          </li>
+      
+          <li class="nav-item ">
+            <a class="navbar-brand" [routerLink]="['viewprofile']" >ViewProfile</a>
+          </li>
+        
+      </ul>
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button type="button" class="btn btn-light">Search</button>
+      </form> -->
+     
+
+      <a class="navbar-brand" [routerLink]="['/Home']" (click)="reset()" >Logout</a>
+    </div>
+  </nav>
+<router-outlet></router-outlet>
+</div>

@@ -1,0 +1,105 @@
+
+
+<!-- 
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+        
+    <table class="table table-striped custab">
+    <thead style="background:dodgerblue;color:aliceblue">
+   
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let item of list">
+        <td>{{item.itemid}}</td>
+        <td>{{item.itemname}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.stocknum}}</td>
+        <td>{{item.description}}</td>
+        <td><img src='assets/images/{{item.image}}' style="height:150px; width:150px;"><br></td>
+         <td class="text-center">
+           <div class="btn-group">
+          <button  type="button" (click)="view(item.itemid)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
+          <button  type="button" (click)="Delete(item.itemid)" class="btn btn-danger">Del</button>
+        </div>
+        </td>
+    </tr>
+           
+    </table>
+
+    
+    </div>
+</div> -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="itemform">
+            
+            <div class="form-group">
+                   <label>ItemName</label>            
+                <input type="text" formControlName="itemname"  class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Price</label>            
+           <input type="number" formControlName="price"  class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Stock</label>            
+           <input type="text" formControlName="stocknum"  class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Description</label>            
+           <input type="text" formControlName="description"  class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>remarks</label>            
+           <input type="text" formControlName="remarks"  class="form-control" />
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-primary" (click)="Edititem()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+   
+<div class="container">
+<div class="row" >
+  <div class="col-md-3" *ngFor="let item of list">
+  <div class="card" style="width:250px">
+    <img class="img" src="assets/images/{{item.image}}" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">{{item.itemname}}</h4>
+      <h5 class="card-text">ID:{{item.itemid}}
+         Price:{{item.price}} </h5>
+      <button  type="button" (click)="view(item.itemid)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
+      <button  type="button"  class="btn btn-danger" (click)="Delete(item.itemid)">Del</button>
+      <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+    </div>
+  </div>
+</div>
+  </div>
+ </div>
+
+
+
+
+

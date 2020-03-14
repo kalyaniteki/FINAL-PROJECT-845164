@@ -1,0 +1,57 @@
+
+<div class="container" id="search">
+ 
+    <form [formGroup]="itemform">
+      <div class="row">
+        <div col-md-6>
+          <div class="form-group">
+        <input type="text" formControlName="itemname" placeholder="Search" class="form-control">
+      </div>
+        </div>
+      <div col-md-6>
+      <div class="form-group">
+        <button type="button" class="btn btn-light" (click)="Search()">Search</button>
+      </div>
+      </div>
+      
+    </div>
+   </form>
+  
+  </div>
+  <!-- <div class="container login-container">
+    <div class="col-md-6 login-form-2">
+        
+      <form [formGroup]="itemform">
+         
+          <input type="search" formControlName="itemname" placeholder="Search" class="form-control"/>
+          <button type="button" class="btn btn-light" (click)="Search()">Search</button>
+       
+    </form>
+          
+  
+</div>
+</div> -->
+
+
+
+
+   <div class="container">
+    <div class="row" >
+      <div class="col-md-3" *ngFor="let item of list">
+      <div class="card" style="width:250px">
+        <img class="img" src="assets/images/{{item.image}}" alt="Card image" style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">{{item.itemname}}</h4>
+          <h5 class="card-text">Details:{{item.description}}</h5>
+           <h5>Price:{{item.price}} </h5>
+            
+          <button id="b1" type="button" (click)="buy(item)" class="btn btn-primary" >BuyItem</button>
+     
+          <button id="b2" type="button" (click)="AddCart(item)" class="btn btn-primary">AddToCart</button>
+         
+        <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+        </div>
+      </div>
+      </div>
+      </div>
+     </div>

@@ -1,0 +1,131 @@
+
+<div class="container register-form">
+    <div class="form" id="body">
+        <div class="note">
+            <p>Pay Here</p>
+        </div>
+        <form [formGroup]="pform"  > 
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="select">Transactiontype</label>
+                        <select (change)="Pay()"  formControlName="card" name="select" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.card.errors}">
+                            <option value="">Select Type</option>
+                            <option  value="Card">Card</option>
+                            <option  value="COD">COD</option>
+                        </select> 
+                        <div *ngIf="submitted && f.card.errors" class="invalid-feedback">
+                            <div *ngIf="f.card.errors.required">TransactionType is required</div>
+                        </div>
+                    </div>
+                    <div *ngIf="payment==true">
+                        <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control"  placeholder="CardNumber *" value="" />
+                          
+                     </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control"  placeholder="CVV *" value="" />
+                          
+                        </div>
+                </div>
+            </div>
+            </div>
+          
+         </div>
+         <div class="col-md-6">
+            <label for="item">Item</label>
+            <div class="form-group">
+                <input type="text" class="form-control" name="item"  disabled formControlName="itemname" placeholder="ProductName *" value=""/>
+            </div>
+         </div>
+            <div class="col-md-6">
+            <label for="price">Price</label>  
+            <div class="form-group">
+                <input type="text" class="form-control"  name="price" disabled formControlName="price" placeholder="Price *" value=""/>
+            </div>
+
+         </div>
+         <div class="col-md-12">
+         <div class="form-group">
+            <textarea class="form-control" required formControlName="remarks" placeholder="Remarks *" value="" [ngClass]="{ 'is-invalid': submitted && f.remarks.errors }"></textarea>
+            <div *ngIf="submitted && f.remarks.errors" class="invalid-feedback">
+                <div *ngIf="f.remarks.errors.required">Remarks is required</div>
+            </div>
+        </div>
+        </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                        <!-- <input type="number" class="form-control"   formControlName="num"  /> -->
+                        <button type="button" class="btn btn-primary" value="minus" (click)="decrease()">
+                            -  
+                          </button>
+                    
+                         <input id="input" type="text" [(ngModel)]="no" formControlName="num" class="form-control" >
+                          <button type="button" class="btn btn-primary" value="plus" (click)="increase()">
+                            +  
+                          </button>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-6">
+            <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="Onsubmit()" >Pay</button>
+        </div>
+    </div>
+        <div class="col-6">
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="total()" >Show Total</button>
+        </div>
+         </div>
+        </div>
+        </div>
+    </form>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="pform">  
+                <div class="form-group">
+                <label>Itemname</label>
+                <input type="text" formControlName="itemname"  class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label>NoOfItems</label>
+                <input type="text" formControlName="num"  class="form-control"/>
+            </div>
+           
+             <div class="form-group">
+                <label>Price</label>
+                <input type="text" formControlName="price"  class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>Total</label>
+                <input type="text" [(ngModel)]="ptotal" formControlName="ptotal" placeholder="Total" class="form-control"/>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
